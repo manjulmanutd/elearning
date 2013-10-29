@@ -1,4 +1,0 @@
-elearning
-=========
-
-Elearning Project
