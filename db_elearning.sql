@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 29, 2013 at 11:39 PM
+-- Generation Time: Oct 29, 2013 at 08:01 AM
 -- Server version: 5.5.32-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.3
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `chat_with` (
   `level` varchar(255) NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=85 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=100 ;
 
 --
 -- Dumping data for table `chat_with`
@@ -74,7 +74,8 @@ CREATE TABLE IF NOT EXISTS `chat_with` (
 
 INSERT INTO `chat_with` (`id`, `session`, `level`, `status`) VALUES
 (19, 'test12', 'user', 1),
-(34, 'superadmin', 'admin', 1);
+(34, 'superadmin', 'admin', 1),
+(99, 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -143,19 +144,21 @@ CREATE TABLE IF NOT EXISTS `tbl_appointments` (
   `requirements` text NOT NULL,
   `course_id` int(11) NOT NULL,
   `status` int(11) NOT NULL,
+  `remarks` text NOT NULL,
   PRIMARY KEY (`appointment_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `tbl_appointments`
 --
 
-INSERT INTO `tbl_appointments` (`appointment_id`, `user_id`, `firstname`, `lastname`, `phoneno`, `email`, `appointment_date`, `branch_id`, `admin_id`, `timeslot_id`, `requirements`, `course_id`, `status`) VALUES
-(3, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-27', 6, 6, 1, 'Test', 5, 0),
-(4, 0, 'Ram', 'Ram', 3857129837503, '07.manutdilam@gmail.com', '2013-09-27', 6, 6, 2, 'Tst', 0, 0),
-(5, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-30', 6, 6, 1, 'Test', 5, 0),
-(6, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-27', 6, 6, 1, 'Test', 5, 0),
-(7, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-30', 1, 2, 4, 'Tera Baje', 1, 0);
+INSERT INTO `tbl_appointments` (`appointment_id`, `user_id`, `firstname`, `lastname`, `phoneno`, `email`, `appointment_date`, `branch_id`, `admin_id`, `timeslot_id`, `requirements`, `course_id`, `status`, `remarks`) VALUES
+(3, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-27', 6, 6, 1, 'Test', 5, 0, ''),
+(4, 0, 'Ram', 'Ram', 3857129837503, '07.manutdilam@gmail.com', '2013-09-27', 6, 6, 2, 'Tst', 0, 0, ''),
+(5, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-30', 6, 6, 1, 'Test', 5, 0, ''),
+(6, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-27', 6, 6, 1, 'Test', 5, 0, ''),
+(7, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-30', 1, 2, 4, 'Tera Baje', 1, 0, ''),
+(8, 0, 'Ram Hari SHiwa', 'Ae ba', 489108401, 'siralex@manutd.com', '2013-10-25', 1, 2, 4, 'Oe k cha', 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -250,6 +253,244 @@ CREATE TABLE IF NOT EXISTS `tbl_country` (
   `numericISOCode` varchar(3) NOT NULL DEFAULT '',
   PRIMARY KEY (`country_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_country`
+--
+
+INSERT INTO `tbl_country` (`country_id`, `countryName`, `twoLetterISOCode`, `threeLetterISOCode`, `numericISOCode`) VALUES
+(1, 'Afghanistan', 'AF', 'AFG', '004'),
+(2, 'Albania', 'AL', 'ALB', '008'),
+(3, 'Algeria', 'DZ', 'DZA', '012'),
+(4, 'American Samoa', 'AS', 'ASM', '016'),
+(5, 'Andorra', 'AD', 'AND', '020'),
+(6, 'Angola', 'AO', 'AGO', '024'),
+(7, 'Anguilla', 'AI', 'AIA', '660'),
+(8, 'Antarctica', 'AQ', 'ATA', '010'),
+(9, 'Antigua and Barbuda', 'AG', 'ATG', '028'),
+(10, 'Argentina', 'AR', 'ARG', '032'),
+(11, 'Armenia', 'AM', 'ARM', '051'),
+(12, 'Aruba', 'AW', 'ABW', '533'),
+(13, 'Australia', 'AU', 'AUS', '036'),
+(14, 'Austria', 'AT', 'AUT', '040'),
+(15, 'Azerbaijan', 'AZ', 'AZE', '031'),
+(16, 'Bahamas', 'BS', 'BHS', '044'),
+(17, 'Bahrain', 'BH', 'BHR', '048'),
+(18, 'Bangladesh', 'BD', 'BGD', '050'),
+(19, 'Barbados', 'BB', 'BRB', '052'),
+(20, 'Belarus', 'BY', 'BLR', '112'),
+(21, 'Belgium', 'BE', 'BEL', '056'),
+(22, 'Belize', 'BZ', 'BLZ', '084'),
+(23, 'Benin', 'BJ', 'BEN', '204'),
+(24, 'Bermuda', 'BM', 'BMU', '060'),
+(25, 'Bhutan', 'BT', 'BTN', '064'),
+(26, 'Bolivia', 'BO', 'BOL', '068'),
+(27, 'Bosnia and Herzegowina', 'BA', 'BIH', '070'),
+(28, 'Botswana', 'BW', 'BWA', '072'),
+(29, 'Bouvet Island', 'BV', 'BVT', '074'),
+(30, 'Brazil', 'BR', 'BRA', '076'),
+(31, 'British Indian Ocean Territory', 'IO', 'IOT', '086'),
+(32, 'Brunei Darussalam', 'BN', 'BRN', '096'),
+(33, 'Bulgaria', 'BG', 'BGR', '100'),
+(34, 'Burkina Faso', 'BF', 'BFA', '854'),
+(35, 'Burundi', 'BI', 'BDI', '108'),
+(36, 'Cambodia', 'KH', 'KHM', '116'),
+(37, 'Canada', 'CA', 'CAN', '124'),
+(38, 'Cape Verde', 'CV', 'CPV', '13'),
+(39, 'Cayman Islands', 'KY', 'CYM', '136'),
+(40, 'Central African Republic', 'CF', 'CAF', '140'),
+(41, 'Chad', 'TD', 'TCD', '148'),
+(42, 'Chile', 'CL', 'CHL', '152'),
+(43, 'China', 'CN', 'CHN', '156'),
+(44, 'Christmas Island', 'CX', 'CXR', '162'),
+(45, 'Cocos (Keeling) Islands', 'CC', 'CCK', '166'),
+(46, 'Colombia', 'CO', 'COL', '170'),
+(47, 'Comoros', 'KM', 'COM', '174'),
+(48, 'Congo', 'CG', 'COG', '178'),
+(49, 'Congo', ' t', 'CD', 'COD'),
+(50, 'Cook Islands', 'CK', 'COK', '184'),
+(51, 'Costa Rica', 'CR', 'CRI', '188'),
+(52, 'Cote d''Ivoire', 'CI', 'CIV', '384'),
+(53, 'Croatia (local name: Hrvatska)', 'HR', 'HRV', '191'),
+(54, 'Cuba', 'CU', 'CUB', '192'),
+(55, 'Cyprus', 'CY', 'CYP', '196'),
+(56, 'Czech Republic', 'CZ', 'CZE', '203'),
+(57, 'Denmark', 'DK', 'DNK', '208'),
+(58, 'Djibouti', 'DJ', 'DJI', '262'),
+(59, 'Dominica', 'DM', 'DMA', '212'),
+(60, 'Dominican Republic', 'DO', 'DOM', '214'),
+(61, 'East Timor', 'TP', 'TMP', '626'),
+(62, 'Ecuador', 'EC', 'ECU', '218'),
+(63, 'Egypt', 'EG', 'EGY', '818'),
+(64, 'El Salvador', 'SV', 'SLV', '222'),
+(65, 'Falkland Islands (Malvinas)', 'FK', 'FLK', '238'),
+(66, 'Faroe Islands', 'FO', 'FRO', '234'),
+(67, 'Fiji', 'FJ', 'FJI', '242'),
+(68, 'Finland', 'FI', 'FIN', '246'),
+(69, 'France', 'FR', 'FRA', '250'),
+(70, 'France', ' M', 'FX', 'FXX'),
+(71, 'French Guiana', 'GF', 'GUF', '254'),
+(72, 'French Polynesia', 'PF', 'PYF', '258'),
+(73, 'French Southern Territories', 'TF', 'ATF', '260'),
+(74, 'Gabon', 'GA', 'GAB', '266'),
+(75, 'Gambia', 'GM', 'GMB', '270'),
+(76, 'Georgia', 'GE', 'GEO', '268'),
+(77, 'Germany', 'DE', 'DEU', '276'),
+(78, 'Ghana', 'GH', 'GHA', '288'),
+(79, 'Gibraltar', 'GI', 'GIB', '292'),
+(80, 'Greece', 'GR', 'GRC', '300'),
+(81, 'Greenland', 'GL', 'GRL', '304'),
+(82, 'Grenada', 'GD', 'GRD', '308'),
+(83, 'Guadeloupe', 'GP', 'GLP', '312'),
+(84, 'Guam', 'GU', 'GUM', '316'),
+(85, 'Guatemala', 'GT', 'GTM', '320'),
+(86, 'Guinea', 'GN', 'GIN', '324'),
+(87, 'Guinea-Bissau', 'GW', 'GNB', '624'),
+(88, 'Guyana', 'GY', 'GUY', '328'),
+(89, 'Haiti', 'HT', 'HTI', '332'),
+(90, 'Heard and Mc Donald Islands', 'HM', 'HMD', '334'),
+(91, 'Holy see (Vatican City State)', 'VA', 'VAT', '336'),
+(92, 'Honduras', 'HN', 'HND', '340'),
+(93, 'Hong Kong', 'HK', 'HKG', '344'),
+(94, 'Hungary', 'HU', 'HUN', '348'),
+(95, 'Iceland', 'IS', 'ISL', '352'),
+(96, 'India', 'IN', 'IND', '356'),
+(97, 'Indonesia', 'ID', 'IDN', '360'),
+(98, 'Iran (Islamic Republic of)', 'IR', 'IRN', '364'),
+(99, 'Iraq', 'IQ', 'IRQ', '368'),
+(100, 'Ireland', 'IE', 'IRL', '372'),
+(101, 'Israel', 'IL', 'ISR', '376'),
+(102, 'Italy', 'IT', 'ITA', '380'),
+(103, 'Jamaica', 'JM', 'JAM', '388'),
+(104, 'Japan', 'JP', 'JPN', '392'),
+(105, 'Jordan', 'JO', 'JOR', '400'),
+(106, 'Kazakhstan', 'KZ', 'KAZ', '398'),
+(107, 'Kenya', 'KE', 'KEN', '404'),
+(108, 'Kiribati', 'KI', 'KIR', '296'),
+(109, 'Korea', ' D', 'KP', 'PRK'),
+(110, 'Korea', ' R', 'KR', 'KOR'),
+(111, 'Kuwait', 'KW', 'KWT', '414'),
+(112, 'Kyrgyzstan', 'KG', 'KGZ', '417'),
+(114, 'Latvia', 'LV', 'LVA', '428'),
+(115, 'Lebanon', 'LB', 'LBN', '422'),
+(116, 'Lesotho', 'LS', 'LSO', '426'),
+(117, 'Liberia', 'LR', 'LBR', '430'),
+(118, 'Libyan Arab Jamahiriya', 'LY', 'LBY', '434'),
+(119, 'Liechtenstein', 'LI', 'LIE', '438'),
+(120, 'Lithuania', 'LT', 'LTU', '440'),
+(121, 'Luxembourg', 'LU', 'LUX', '442'),
+(122, 'Macau', 'MO', 'MAC', '446'),
+(123, 'Macedonia', ' t', 'MK', 'MKD'),
+(124, 'Madagascar', 'MG', 'MDG', '450'),
+(125, 'Malawi', 'MW', 'MWI', '454'),
+(126, 'Malaysia', 'MY', 'MYS', '458'),
+(127, 'Maldives', 'MV', 'MDV', '462'),
+(128, 'Mali', 'ML', 'MLI', '466'),
+(129, 'Malta', 'MT', 'MLT', '470'),
+(130, 'Marshall Islands', 'MH', 'MHL', '584'),
+(131, 'Martinique', 'MQ', 'MTQ', '474'),
+(132, 'Mauritania', 'MR', 'MRT', '478'),
+(133, 'Mauritius', 'MU', 'MUS', '480'),
+(134, 'Mayotte', 'YT', 'MYT', '175'),
+(135, 'Mexico', 'MX', 'MEX', '484'),
+(136, 'Micronesia', ' F', 'FM', 'FSM'),
+(137, 'Moldova', ' R', 'MD', 'MDA'),
+(138, 'Monaco', 'MC', 'MCO', '492'),
+(139, 'Mongolia', 'MN', 'MNG', '496'),
+(140, 'Montserrat', 'MS', 'MSR', '500'),
+(141, 'Morocco', 'MA', 'MAR', '504'),
+(142, 'Mozambique', 'MZ', 'MOZ', '508'),
+(143, 'Myanmar', 'MM', 'MMR', '104'),
+(144, 'Namibia', 'NA', 'NAM', '516'),
+(145, 'Nauru', 'NR', 'NRU', '520'),
+(146, 'Nepal', 'NP', 'NPL', '524'),
+(147, 'Netherlands', 'NL', 'NLD', '528'),
+(148, 'Netherlands Antilles', 'AN', 'ANT', '530'),
+(149, 'New Caledonia', 'NC', 'NCL', '540'),
+(150, 'New Zealand', 'NZ', 'NZL', '554'),
+(151, 'Nicaragua', 'NI', 'NIC', '558'),
+(152, 'Niger', 'NE', 'NER', '562'),
+(153, 'Nigeria', 'NG', 'NGA', '566'),
+(154, 'Niue', 'NU', 'NIU', '570'),
+(155, 'Norfolk Island', 'NF', 'NFK', '574'),
+(156, 'Northern Mariana Islands', 'MP', 'MNP', '580'),
+(157, 'Norway', 'NO', 'NOR', '578'),
+(158, 'Oman', 'OM', 'OMN', '512'),
+(159, 'Pakistan', 'PK', 'PAK', '586'),
+(160, 'Palau', 'PW', 'PLW', '585'),
+(161, 'Palestinian Territory', ' o', 'PS', 'PSE'),
+(162, 'Panama', 'PA', 'PAN', '591'),
+(163, 'Papua New Guinea', 'PG', 'PNG', '598'),
+(164, 'Paraguay', 'PY', 'PRY', '600'),
+(165, 'Peru', 'PE', 'PER', '604'),
+(166, 'Philippines', 'PH', 'PHL', '608'),
+(167, 'Pitcairn', 'PN', 'PCN', '612'),
+(168, 'Poland', 'PL', 'POL', '616'),
+(169, 'Portugal', 'PT', 'PRT', '620'),
+(170, 'Puerto Rico', 'PR', 'PRI', '630'),
+(171, 'Qatar', 'QA', 'QAT', '634'),
+(172, 'Reunion', 'RE', 'REU', '638'),
+(173, 'Romania', 'RO', 'ROM', '642'),
+(174, 'Russian Federation', 'RU', 'RUS', '643'),
+(175, 'Rwanda', 'RW', 'RWA', '646'),
+(176, 'Saint Kitts and Nevis', 'KN', 'KNA', '659'),
+(177, 'Saint Lucia', 'LC', 'LCA', '662'),
+(179, 'Samoa', 'WS', 'WSM', '882'),
+(180, 'San Marino', 'SM', 'SMR', '674'),
+(181, 'Sao Tome and Principe', 'ST', 'STP', '678'),
+(182, 'Saudi Arabia', 'SA', 'SAU', '682'),
+(183, 'Senegal', 'SN', 'SEN', '686'),
+(184, 'Seychelles', 'SC', 'SYC', '690'),
+(185, 'Sierra Leone', 'SL', 'SLE', '694'),
+(186, 'Singapore', 'SG', 'SGP', '702'),
+(187, 'Slovakia (Slovak Republic)', 'SK', 'SVK', '703'),
+(188, 'Slovenia', 'SI', 'SVN', '705'),
+(189, 'Solomon Islands', 'SB', 'SLB', '090'),
+(190, 'Somalia', 'SO', 'SOM', '706'),
+(191, 'South Africa', 'ZA', 'ZAF', '710'),
+(193, 'Spain', 'ES', 'ESP', '724'),
+(194, 'Sri Lanka', 'LK', 'LKA', '144'),
+(195, 'St. Helena', 'SH', 'SHN', '654'),
+(196, 'St. Pierre and Miquelon', 'PM', 'SPM', '666'),
+(197, 'Sudan', 'SD', 'SDN', '736'),
+(198, 'Suriname', 'SR', 'SUR', '740'),
+(199, 'Svalbard and Jan Mayen Islands', 'SJ', 'SJM', '744'),
+(200, 'Swaziland', 'SZ', 'SWZ', '748'),
+(201, 'Sweden', 'SE', 'SWE', '752'),
+(202, 'Switzerland', 'CH', 'CHE', '756'),
+(203, 'Syrian Arab Republic', 'SY', 'SYR', '760'),
+(204, 'Taiwan', ' R', 'TW', 'TWN'),
+(205, 'Tajikistan', 'TJ', 'TJK', '762'),
+(206, 'Tanzania', ' U', 'TZ', 'TZA'),
+(207, 'Thailand', 'TH', 'THA', '764'),
+(208, 'Togo', 'TG', 'TGO', '768'),
+(209, 'Tokelau', 'TK', 'TKL', '772'),
+(210, 'Tonga', 'TO', 'TON', '776'),
+(211, 'Trinidad and Tobago', 'TT', 'TTO', '780'),
+(212, 'Tunisia', 'TN', 'TUN', '788'),
+(213, 'Turkey', 'TR', 'TUR', '792'),
+(214, 'Turkmenistan', 'TM', 'TKM', '795'),
+(215, 'Turks and Caicos Islands', 'TC', 'TCA', '796'),
+(216, 'Tuvalu', 'TV', 'TUV', '798'),
+(217, 'Uganda', 'UG', 'UGA', '800'),
+(218, 'Ukraine', 'UA', 'UKR', '804'),
+(219, 'United Arab Emirates', 'AE', 'ARE', '784'),
+(220, 'United Kingdom', 'GB', 'GBR', '826'),
+(221, 'United States', 'US', 'USA', '840'),
+(223, 'Uruguay', 'UY', 'URY', '858'),
+(224, 'Uzbekistan', 'UZ', 'UZB', '860'),
+(225, 'Vanuatu', 'VU', 'VUT', '548'),
+(226, 'Venezuela', 'VE', 'VEN', '862'),
+(227, 'Viet Nam', 'VN', 'VNM', '704'),
+(228, 'Virgin Islands (British)', 'VG', 'VGB', '092'),
+(229, 'Virgin Islands (U.S.)', 'VI', 'VIR', '850'),
+(230, 'Wallis and Futuna Islands', 'WF', 'WLF', '876'),
+(231, 'Western Sahara', 'EH', 'ESH', '732'),
+(232, 'Yemen', 'YE', 'YEM', '887'),
+(233, 'Yugoslavia', 'YU', 'YUG', '891'),
+(234, 'Zambia', 'ZM', 'ZMB', '894'),
+(235, 'Zimbabwe', 'ZW', 'ZWE', '716'),
+(236, '(other)', '--', '---', '000');
 
 -- --------------------------------------------------------
 
@@ -506,7 +747,7 @@ CREATE TABLE IF NOT EXISTS `tbl_log_manager` (
   `branch_id` int(11) NOT NULL,
   `log_status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `tbl_log_manager`
@@ -535,7 +776,15 @@ INSERT INTO `tbl_log_manager` (`log_id`, `user_id`, `user_login_date`, `user_log
 (20, 3, '2013-09-27 07:41:12', '0000-00-00 00:00:00', '127.0.0.1', 6, 1),
 (21, 3, '2013-09-27 07:42:08', '2013-09-27 07:46:15', '127.0.0.1', 6, 0),
 (22, 3, '2013-09-29 11:11:16', '0000-00-00 00:00:00', '127.0.0.1', 6, 1),
-(23, 3, '2013-09-29 16:17:25', '2013-09-29 22:39:26', '127.0.0.1', 6, 0);
+(23, 3, '2013-09-29 16:17:25', '2013-09-29 22:39:26', '127.0.0.1', 6, 0),
+(24, 3, '2013-10-01 19:51:40', '2013-10-01 19:54:20', '127.0.0.1', 6, 0),
+(25, 3, '2013-10-01 19:55:20', '2013-10-01 19:56:07', '127.0.0.1', 6, 0),
+(26, 3, '2013-10-02 19:38:54', '2013-10-02 20:02:09', '127.0.0.1', 6, 0),
+(27, 3, '2013-10-02 20:02:22', '2013-10-02 21:55:39', '127.0.0.1', 6, 0),
+(28, 3, '2013-10-02 22:24:50', '2013-10-02 22:27:48', '127.0.0.1', 6, 0),
+(29, 3, '2013-10-02 22:30:34', '2013-10-02 22:30:39', '127.0.0.1', 6, 0),
+(30, 4, '2013-10-02 22:31:16', '2013-10-02 22:35:29', '127.0.0.1', 1, 0),
+(31, 3, '2013-10-02 22:36:19', '2013-10-02 22:38:34', '127.0.0.1', 6, 0);
 
 -- --------------------------------------------------------
 
@@ -950,8 +1199,8 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `email` varchar(255) NOT NULL DEFAULT '',
   `gender` varchar(255) NOT NULL DEFAULT '',
   `dob_year` year(4) NOT NULL DEFAULT '0000',
-  `dob_month` int(5) NOT NULL DEFAULT '0',
-  `dob_day` int(5) NOT NULL DEFAULT '0',
+  `dob_month` varchar(5) NOT NULL,
+  `dob_day` int(5) NOT NULL,
   `country_id` varchar(255) NOT NULL DEFAULT '',
   `city` varchar(255) NOT NULL DEFAULT '',
   `province_id` tinyint(4) NOT NULL DEFAULT '0',
@@ -961,16 +1210,17 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `verification_code` varchar(255) NOT NULL DEFAULT '',
   `status` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`user_id`, `user_type`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `branch_id`, `course_id`, `contact_number`, `image`, `email`, `gender`, `dob_year`, `dob_month`, `dob_day`, `country_id`, `city`, `province_id`, `postal_code`, `isPaid`, `registered_date`, `verification_code`, `status`) VALUES
-(1, 2, 'Pradeep', '', 'Karki', 'lapten', 'lapten', 1, 1, '9841765177', '', 'lapten@lapten.com', 'male', 1930, 0, 1, '0', '', 0, '', 0, '2013-08-29 01:05:40', '', 1),
-(2, 2, 'Test12', '', 'test12', 'test12', 'test12', 1, 1, '9841765177', '', '07.manutdilam@gmail.com', '', 0000, 0, 0, '', '', 0, '', 0, '2013-08-29 09:48:19', '', 1),
-(3, 2, 'Manjul', '', 'Bhattarai', 'manjul', 'manjul', 6, 5, '759712390515', '', '07.manutdilam@gail.com', '', 0000, 0, 0, '', '', 0, '', 0, '2013-09-25 20:38:16', '', 1);
+(1, 2, 'Pradeep', '', 'Karki', 'lapten', 'lapten', 1, 1, '9841765177', '', 'lapten@lapten.com', 'male', 1930, '0', 1, '0', '', 0, '', 0, '2013-08-29 01:05:40', '', 1),
+(2, 2, 'Test12', '', 'test12', 'test12', 'test12', 1, 1, '9841765177', '', '07.manutdilam@gmail.com', '', 0000, '0', 0, '', '', 0, '', 0, '2013-08-29 09:48:19', '', 1),
+(3, 2, 'Manjul', '', 'Bhattarai', 'manjul', 'manjul', 6, 5, '759712390515', '1380732029_327569.jpeg', '07.manutdilam@gail.com', 'male', 1960, 'Apr', 17, 'Nepal', 'Kathmandu', 0, '0988', 0, '2013-10-02 22:27:28', '', 1),
+(4, 2, 'test1', '', 'test1', 'test1', 'test1', 1, 1, '759712390515', '', 'test1@test.com', 'male', 1982, 'Jan', 3, 'Nepal', 'Kathmandu', 0, '0988', 0, '2013-10-02 22:33:53', '', 1);
 
 -- --------------------------------------------------------
 
