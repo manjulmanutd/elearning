@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests id="cif_120:1" xmlns="http://www.veriskhealth.com/dataverifier/v1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<actual-connection  port="1521" sid="orcl"
+		username="HP_UPQA_NORM001" password="oracle" />
+	<expected-connection host="192.168.72.73" port="1521"
+		sid="orcl" username="HP_UPQA_NORM001" password="oracle" />
+
+	<test id="1" description="This is a description">
+		<actual>
+			<table key="CLAIM_NUMBER" name="cif_120_test">
+				<fields type="exclude">BILLING_PRVDR_FULL_NAME,BILLING_PRVDR_NBR</fields>
+			</table>
+		</actual>
+		<expected>
+			<table key="CLAIM_NUMBER" name="cif_120">
+				<fields type="exclude">BILLING_PRVDR_FULL_NAME,BILLING_PRVDR_NBR</fields>
+			</table>
+		</expected>
+	</test>
+</tests>
