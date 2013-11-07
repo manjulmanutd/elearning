@@ -56,8 +56,21 @@ class Appointment extends CI_Controller {
         }
     }
 
+    function markComplete($id) {
+        $data['appointment_id'] = $id;
+        $data['page'] = 'admin/pages/appointments/mark_complete';
+        $this->load->view('admin/admin_dash',$data);
+    }
+    
+    function completeRemarks($id){
+        
+        $this->appointment_model->updateAppointment($id);
+        $this->appointment_model->remove($id);
+        redirect('appointment/view_appointment_history');
+    }
+
     function remove() {
-        $res = $this->appointment_model->remove();
+        $this->appointment_model->remove();
         redirect('appointment/list_appointments');
     }
 

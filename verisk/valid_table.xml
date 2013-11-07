@@ -9,7 +9,7 @@
 
 	<test id="1" description="This is a description">
 		<actual>
-			<table key="col3" name="actual_diff">
+			<table key="col3" name="actual">
 				<fields type="all"/>
 			</table>
 		</actual>

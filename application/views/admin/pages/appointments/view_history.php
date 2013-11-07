@@ -11,7 +11,7 @@
 <?php
 if (!empty($allAppointments)) {
     ?>
-    <table width="90%">
+    <table width="100%">
         <tr>
             <th>S/N</th>
             <th>Full Name</th>
@@ -20,7 +20,8 @@ if (!empty($allAppointments)) {
             <th>Selected Date</th>
             <th>Selected Time Slot</th>
             <th>Specific Requirements</th>
-            <th>Action</th>
+            <th>Remarks</th>
+            
         </tr>
 
 
@@ -39,13 +40,7 @@ if (!empty($allAppointments)) {
                     <?php 
                     if(!empty($appointment->timeslot_id)){echo $this->appointment_model->getTimeSlot($appointment->timeslot_id)->start_time . " to " . $this->appointment_model->getTimeSlot($appointment->timeslot_id)->end_time; }?></td>
                 <td class='c_right'><?php echo $appointment->requirements; ?></td>
-                <td class='action'>
-                    <?php if($appointment->status == 1){?>
-                    <a href="<?php echo base_url(); ?>appointment/remove/<?php echo $appointment->appointment_id; ?>" onclick='return show_confirm()' class='btn btn-danger'>Mark Complete</a> 
-                    <?php } else {?>
-                    <a href="#" class='btn btn-info'>Completed</a> 
-                    <?php } ?>
-                </td>
+                <td><?php echo $appointment->remarks; ?></td>
             </tr>
             <?php
         endforeach;

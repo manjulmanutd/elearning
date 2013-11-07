@@ -21,4 +21,7 @@
     <h3>Terms and Conditions</h3>
     <a href="terms" class="btn btn-danger">Terms and Conditions</a>
     
+    <h3>Enrollment Form</h3>
+    <a href="enrollment_form" class="btn btn-success">Enrollment Form Inputs</a>
+    
 </ul>

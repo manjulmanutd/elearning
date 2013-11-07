@@ -394,6 +394,14 @@ class Appointment_model extends CI_Model {
 
         return $this->db->get_where('tbl_admin', array('branch_id' => $branchId, 'user_type' => 1))->result();
     }
+    
+    function updateAppointment($id){
+        
+        $remarks = $this->input->post('remarks');
+        
+        $this->db->where('appointment_id',$id);
+        $this->db->update('tbl_appointments',array('remarks'=>$remarks));
+    }
 
 }
 
