@@ -367,6 +367,11 @@ class SuperAdmin extends CI_Controller {
         $data['page'] = 'superadmin/pages/site_conf/enrollment_backend';
         $this->load->view('superadmin/superadmin_dash', $data);
     }
+    
+    function enrollment_add(){
+        $data['page'] = 'superadmin/pages/site_conf/enrollment_add';
+        $this->load->view('superadmin/superadmin_dash', $data);
+    }
 
 }
 

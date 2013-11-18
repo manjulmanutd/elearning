@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 29, 2013 at 08:01 AM
--- Server version: 5.5.32-0ubuntu0.13.04.1
+-- Generation Time: Nov 18, 2013 at 07:46 AM
+-- Server version: 5.5.34-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.3
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `chat_with` (
   `level` varchar(255) NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=100 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=101 ;
 
 --
 -- Dumping data for table `chat_with`
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `chat_with` (
 INSERT INTO `chat_with` (`id`, `session`, `level`, `status`) VALUES
 (19, 'test12', 'user', 1),
 (34, 'superadmin', 'admin', 1),
-(99, 'admin', 'admin', 1);
+(100, 'admin', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -158,7 +158,7 @@ INSERT INTO `tbl_appointments` (`appointment_id`, `user_id`, `firstname`, `lastn
 (5, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-30', 6, 6, 1, 'Test', 5, 0, ''),
 (6, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-27', 6, 6, 1, 'Test', 5, 0, ''),
 (7, 3, 'Manjul', 'Bhattarai', 759712390515, '07.manutdilam@gail.com', '2013-09-30', 1, 2, 4, 'Tera Baje', 1, 0, ''),
-(8, 0, 'Ram Hari SHiwa', 'Ae ba', 489108401, 'siralex@manutd.com', '2013-10-25', 1, 2, 4, 'Oe k cha', 0, 1, '');
+(8, 0, 'Ram Hari SHiwa', 'Ae ba', 489108401, 'siralex@manutd.com', '2013-10-25', 1, 2, 4, 'Oe k cha', 0, 0, 'I am fine. He did fineI am fine. He did fineI am fine. He did fineI am fine. He did fineI am fine. He did fineI am fine. He did fineI am fine. He did fineI am fine. He did fineI am fine. He did fineI am fine. He did fine');
 
 -- --------------------------------------------------------
 
